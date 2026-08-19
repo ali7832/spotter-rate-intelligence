@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spotter Rate Intelligence</title>
+  <style>
+    :root{--bg:#071018;--panel:#0c1822;--panel2:#10212d;--text:#f5f8fa;--muted:#91a4b1;--line:#1f3542;--accent:#29d3b2;--accent2:#55a7ff;--warn:#ffcc66;--bad:#ff7979}
+    *{box-sizing:border-box} body{margin:0;background:radial-gradient(circle at 10% -10%,#123246 0,transparent 32%),var(--bg);color:var(--text);font:14px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}
+    .wrap{max-width:1180px;margin:auto;padding:28px}.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}.brand{display:flex;align-items:center;gap:12px}.mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 8px 30px #29d3b22c}.brand h1{font-size:18px;margin:0}.tag{color:var(--muted);font-size:12px}.pill{border:1px solid var(--line);background:#0b1720;padding:8px 11px;border-radius:999px;color:#b9c8d2}.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;margin-bottom:18px}.card{background:linear-gradient(180deg,#0e1d28,#0a151e);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 22px 70px #00000030}.hero h2{font-size:34px;line-height:1.1;margin:0 0 12px;max-width:680px}.hero p{color:var(--muted);font-size:15px;max-width:700px}.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat{padding:15px;border-radius:14px;background:var(--panel2);border:1px solid #19313f}.stat b{display:block;font-size:20px}.stat span{color:var(--muted);font-size:12px}.tabs{display:flex;gap:8px;margin-bottom:14px}.tab{border:1px solid var(--line);background:#0b1720;color:#a8bbc7;border-radius:10px;padding:10px 14px;cursor:pointer}.tab.active{color:#071018;background:var(--accent);border-color:var(--accent)}.grid{display:grid;grid-template-columns:1.05fr .95fr;gap:18px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field label{display:block;color:#a8bbc7;font-size:12px;margin:0 0 6px}.field input,.field select{width:100%;background:#07131c;border:1px solid #23404f;color:var(--text);border-radius:10px;padding:11px 12px;outline:none}.field input:focus,.field select:focus{border-color:var(--accent)}.wide{grid-column:1/-1}.btn{border:0;background:linear-gradient(135deg,var(--accent),#45bff3);color:#041016;font-weight:750;border-radius:11px;padding:12px 16px;cursor:pointer}.btn.secondary{background:#122631;color:#dbe8ee;border:1px solid #244352}.result{min-height:290px;display:flex;flex-direction:column;justify-content:center}.empty{text-align:center;color:var(--muted)}.price{font-size:48px;font-weight:800;letter-spacing:-1px;margin:8px 0}.range{color:#b9c8d2}.badge{display:inline-block;padding:6px 9px;border-radius:999px;background:#12332f;color:#79e9d3;font-size:12px;margin-right:6px}.warn{background:#3a2e16;color:#ffdb8a}.error{color:var(--bad)}.kv{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:20px}.kv div{background:#0d1d27;border:1px solid #1d3441;border-radius:10px;padding:10px}.kv small{display:block;color:var(--muted)}.drop{border:1px dashed #315468;border-radius:14px;padding:30px;text-align:center;background:#091721}.drop input{margin:12px 0}.footer{color:#6f8490;font-size:12px;margin-top:18px;text-align:center}@media(max-width:820px){.hero,.grid{grid-template-columns:1fr}.fields{grid-template-columns:1fr}.wide{grid-column:auto}.hero h2{font-size:28px}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="brand"><div class="mark"></div><div><h1>Spotter Rate Intelligence</h1><div class="tag">ML Engineering Assessment Prototype</div></div></div>
+    <div class="pill" id="health">Checking system…</div>
+  </div>
+
+  <section class="hero">
+    <div class="card">
+      <h2>Freight rate prediction built like a production ML system.</h2>
+      <p>Time-aware validation, resilient data quality handling, unseen-lane awareness, temporally selected champion/challenger modeling and calibrated uncertainty — exposed through one deployable service.</p>
+    </div>
+    <div class="card stats">
+      <div class="stat"><b>48K</b><span>labeled development loads</span></div>
+      <div class="stat"><b>12K</b><span>assessment predictions</span></div>
+      <div class="stat"><b>2</b><span>ensemble learners</span></div>
+      <div class="stat"><b>3</b><span>forward validation folds</span></div>
+    </div>
+  </section>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="single">Single Prediction</button>
+    <button class="tab" data-tab="batch">Bulk CSV</button>
+    <button class="tab" data-tab="model">Model Info</button>
+  </div>
+
+  <section id="single" class="tabview grid">
+    <div class="card">
+      <h3>Quote a load</h3>
+      <div class="fields">
+        <div class="field"><label>Pickup</label><input id="pickup" value="Lexington"></div>
+        <div class="field"><label>Delivery</label><input id="delivery" value="Fort Wayne"></div>
+        <div class="field"><label>Distance (miles)</label><input id="distance" type="number" value="360"></div>
+        <div class="field"><label>Equipment</label><select id="equipment"><option>Dry Van</option><option>Reefer</option><option>Flatbed</option></select></div>
+        <div class="field"><label>Weight (lb)</label><input id="weight" type="number" value="32000"></div>
+        <div class="field"><label>Pickup date</label><input id="date" type="date" value="2025-12-15"></div>
+        
+        <button class="btn wide" id="predict">Predict freight rate</button>
+      </div>
+    </div>
+    <div class="card result" id="result"><div class="empty">Enter a load and run a prediction.</div></div>
+  </section>
+
+  <section id="batch" class="tabview card" style="display:none">
+    <h3>Bulk prediction with row-level diagnostics</h3>
+    <p class="tag">Upload a CSV with pickup, delivery, distance, equipment, weight and date. Market signals are optional. Invalid rows are isolated instead of crashing the entire batch.</p>
+    <div class="drop"><input id="csv" type="file" accept=".csv,text/csv"><br><button class="btn" id="upload">Validate, predict & download</button><div id="batchStatus" class="tag" style="margin-top:12px"></div></div>
+  </section>
+
+  <section id="model" class="tabview card" style="display:none"><h3>Model & validation metadata</h3><pre id="modelInfo" style="white-space:pre-wrap;color:#bcd0db;background:#07131c;border:1px solid #1f3542;border-radius:12px;padding:16px;overflow:auto">Loading…</pre></section>
+  <div class="footer">Assessment prototype — demonstrates ML engineering methodology and productionization, not an official Spotter Labs product.</div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+async function health(){try{let r=await fetch('/ready'); if(!r.ok)throw 0; $('health').textContent='● Model ready'; $('health').style.color='#79e9d3'}catch(e){$('health').textContent='● Model unavailable';$('health').style.color='#ff7979'}}
+health();
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.tabview').forEach(x=>x.style.display='none');$(b.dataset.tab).style.display=b.dataset.tab==='single'?'grid':'block';if(b.dataset.tab==='model')loadModel()});
+function numOrNull(id){const v=$(id).value.trim();return v===''?null:Number(v)}
+$('predict').onclick=async()=>{ $('result').innerHTML='<div class="empty">Running model…</div>'; const payload={pickup:$('pickup').value,delivery:$('delivery').value,distance:Number($('distance').value),equipment:$('equipment').value,weight:numOrNull('weight'),date:$('date').value,market_index:numOrNull('market_index'),quote_signal:numOrNull('quote_signal')}; try{const r=await fetch('/v1/predict',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});const d=await r.json();if(!r.ok)throw new Error(d.detail||'Prediction failed');if(d.status==='INVALID_INPUT'){$('result').innerHTML=`<div class="error"><b>Input rejected</b><br>${d.issues}</div>`;return}const warning=d.status!=='SUCCESS';$('result').innerHTML=`<div><span class="badge ${warning?'warn':''}">${d.model_used}</span>${warning?'<span class="badge warn">review warning</span>':''}<div class="price">$${Number(d.predicted_rate).toLocaleString(undefined,{maximumFractionDigits:0})}</div><div class="range">90% empirical range: $${Number(d.lower_rate_p90).toFixed(0)} – $${Number(d.upper_rate_p90).toFixed(0)}</div><div class="kv"><div><small>Status</small>${d.status}</div><div><small>OOD score</small>${d.ood_score??0}</div><div class="wide"><small>Diagnostics</small>${d.issues||'No issues detected'}</div></div></div>`}catch(e){$('result').innerHTML=`<div class="error">${e.message}</div>`}};
+$('upload').onclick=async()=>{const f=$('csv').files[0];if(!f){$('batchStatus').textContent='Choose a CSV first.';return}const fd=new FormData();fd.append('file',f);$('batchStatus').textContent='Validating and predicting…';try{const r=await fetch('/v1/predict/csv',{method:'POST',body:fd});if(!r.ok){let d=await r.json();throw new Error(d.detail||'Upload failed')}const blob=await r.blob();const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='spotter_rate_predictions.csv';a.click();URL.revokeObjectURL(a.href);$('batchStatus').textContent=`Done — ${r.headers.get('X-Row-Count')} rows processed, ${r.headers.get('X-Invalid-Rows')} invalid rows isolated.`}catch(e){$('batchStatus').textContent=e.message}};
+async function loadModel(){try{const r=await fetch('/v1/model/info');const d=await r.json();$('modelInfo').textContent=JSON.stringify(d,null,2)}catch(e){$('modelInfo').textContent='Could not load model metadata.'}}
+</script>
+</body>
+</html>

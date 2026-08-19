@@ -1,0 +1,34 @@
+{
+  "held_out_cities": [
+    "Lexington",
+    "Bakersfield",
+    "Richmond",
+    "Oklahoma City",
+    "Atlanta",
+    "Mobile",
+    "Baton Rouge",
+    "Hartford"
+  ],
+  "train_rows": 28134,
+  "test_rows": 1730,
+  "metrics": {
+    "core_champion_ensemble": {
+      "mae": 138.03519159807612,
+      "rmse": 820.8478565061423,
+      "wape_pct": 5.977985116305707,
+      "mape_pct": 6.119028606448082,
+      "r2": 0.74038810604211,
+      "median_ae": 37.19261412314302,
+      "p95_ae": 168.84061250217727
+    },
+    "full_signal_challenger": {
+      "mae": 157.26276786057608,
+      "rmse": 821.0461297707798,
+      "wape_pct": 6.8106870047816574,
+      "mape_pct": 6.746902098310609,
+      "r2": 0.7402626739926739,
+      "median_ae": 51.94104987984386,
+      "p95_ae": 233.5379746732318
+    }
+  }
+}

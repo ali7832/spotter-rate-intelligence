@@ -1,0 +1,25 @@
+__pycache__/
+.pytest_cache/
+.venv/
+*.pyc
+.env
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# Temporary
+*.log
+
+# Large generated files
+*.tmp

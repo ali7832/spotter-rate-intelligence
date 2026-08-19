@@ -1,0 +1,21 @@
+name: ci
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: PYTHONPATH=src pytest -q
+      - name: Validate assessment outputs when present
+        run: |
+          if [ -f outputs/validation_predictions.csv ] && [ -f outputs/december_chart_inputs.csv ]; then
+            python score.py --predictions outputs/validation_predictions.csv --december-predictions outputs/december_chart_inputs.csv --output-dir outputs/ci_scorer
+          fi

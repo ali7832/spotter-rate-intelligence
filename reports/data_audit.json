@@ -1,0 +1,76 @@
+{
+  "train_shape": [
+    48000,
+    14
+  ],
+  "validation_shape": [
+    12000,
+    13
+  ],
+  "train_date_range": [
+    "2025-01-01",
+    "2025-10-31"
+  ],
+  "validation_date_range": [
+    "2025-11-01",
+    "2025-12-31"
+  ],
+  "train_quality": {
+    "rows": 48000,
+    "missing_weight": 300,
+    "negative_weight": 292,
+    "missing_market_index": 374,
+    "missing_quote_signal": 0,
+    "invalid_distance": 0,
+    "unknown_equipment": 0,
+    "invalid_date": 0,
+    "duplicate_load_id": 0
+  },
+  "validation_quality": {
+    "rows": 12000,
+    "missing_weight": 165,
+    "negative_weight": 145,
+    "missing_market_index": 249,
+    "missing_quote_signal": 0,
+    "invalid_distance": 0,
+    "unknown_equipment": 0,
+    "invalid_date": 0,
+    "duplicate_load_id": 0
+  },
+  "target": {
+    "mean": 2373.9806822916667,
+    "median": 2030.76,
+    "p01": 327.16880000000003,
+    "p99": 5972.834000000003,
+    "p999": 12854.561710000198,
+    "max": 25533.0,
+    "rate_per_mile_median": 2.1453480823707856,
+    "rate_per_mile_p999": 10.068774555213933
+  },
+  "train_city_count": 64,
+  "validation_city_count": 72,
+  "unseen_validation_cities": [
+    "Allentown",
+    "Charlotte",
+    "Chicago",
+    "Jackson",
+    "Knoxville",
+    "Laredo",
+    "Norfolk",
+    "San Diego"
+  ],
+  "unseen_city_row_pct": 12.058333333333334,
+  "unseen_lane_row_pct": 12.174999999999999,
+  "market_index": {
+    "train_mean": 1.0833867156595136,
+    "validation_mean": 0.9269130491022041,
+    "train_missing_pct": 0.7791666666666667,
+    "validation_missing_pct": 2.075
+  },
+  "important_interpretation": [
+    "The evaluation data is strictly later in time than the labeled development data.",
+    "A non-trivial share of evaluation rows contains cities/lanes not seen in training.",
+    "Weight contains missing and negative values, so cleaning behavior must be explicit and reproducible.",
+    "The December chart file lacks market_index and quote_signal, requiring a deliberate fallback path."
+  ]
+}

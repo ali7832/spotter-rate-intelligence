@@ -1,0 +1,18 @@
+{
+  "fold": "october",
+  "train_rows": 43147,
+  "test_rows": 4853,
+  "removed_signals": [
+    "market_index",
+    "quote_signal"
+  ],
+  "metrics": {
+    "mae": 105.98560122496455,
+    "rmse": 646.3775748508297,
+    "wape_pct": 4.454952186619192,
+    "mape_pct": 5.206329472336275,
+    "r2": 0.8211826917516943,
+    "median_ae": 32.119892994134716,
+    "p95_ae": 154.2446822467618
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "training_rows": 48000,
+  "training_start": "2025-01-01",
+  "training_end": "2025-10-31",
+  "target": "posted_rate",
+  "validation_strategy": "forward temporal backtesting: Aug/Sep/Oct",
+  "model_family": "LightGBM L1 + CatBoost MAE ensemble",
+  "blend_weight_lgb": 0.5,
+  "blend_weight_catboost": 0.5,
+  "selected_champion": "core_ensemble_50_50",
+  "selection_reason": "The reduced-feature core model beat the full-signal model on every forward validation month, indicating market_index/quote_signal were non-stationary and hurt future generalization.",
+  "interval_calibration": {
+    "p80": 76.19010598648129,
+    "p90": 118.17335081859729,
+    "p95": 172.93530228469058
+  },
+  "selection_evidence": {
+    "business_baseline_equipment_median_rpm": {
+      "mean_mae": 233.24572730653858,
+      "mean_wape_pct": 9.82670108839313,
+      "mean_rmse": 669.5238180144726
+    },
+    "ensemble_50_50": {
+      "mean_mae": 113.4150518801668,
+      "mean_wape_pct": 4.7739811212012055,
+      "mean_rmse": 628.2454509175718
+    },
+    "core_ensemble_50_50": {
+      "mean_mae": 101.31682719438129,
+      "mean_wape_pct": 4.263817328741424,
+      "mean_rmse": 625.886655570694
+    }
+  }
+}
