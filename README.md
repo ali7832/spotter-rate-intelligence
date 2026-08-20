@@ -3,7 +3,7 @@
 ## Production-Grade Freight Rate Prediction System
 
 A machine learning system that predicts freight load rates using historical transportation data.  
-The project was developed for the Spotter Machine Learning Engineer Assessment and designed beyond a simple model submission — as a reproducible, production-oriented ML pipeline with validation, inference, API serving, testing, and deployment considerations.
+The project was developed for the Spotter Machine Learning Engineer Assessment and designed beyond a simple model submission, as a reproducible, production-oriented ML pipeline with validation, inference, API serving, testing, and deployment considerations.
 
 ---
 
