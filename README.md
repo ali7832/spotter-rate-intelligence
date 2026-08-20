@@ -441,40 +441,76 @@ POST /v1/predict/batch
 CSV Prediction
 
 POST /v1/predict/csv
-# 15. Project Structure
+## 15. Project Structure
 
+```text
 spotter-rate-intelligence/
-
-├── src/<n>
-│   └── spotter_rate_intelligence/<n>
-│       ├── api.py<n>
-│       ├── features.py<n>
-│       ├── inference.py<n>
-│       ├── training.py<n>
-│       ├── model.py<n>
-│       └── data_quality.py<n>
+│
+├── src/
+│   └── spotter_rate_intelligence/
+│       ├── api.py
+│       ├── config.py
+│       ├── data_quality.py
+│       ├── features.py
+│       ├── inference.py
+│       ├── metrics.py
+│       ├── model.py
+│       └── training.py
 │
 ├── scripts/
 │   ├── train_models.py
 │   ├── generate_outputs.py
 │   ├── run_audit.py
-│   └── benchmark.py
+│   ├── benchmark.py
+│   └── analyze_model.py
 │
 ├── tests/
+│   ├── test_api.py
+│   ├── test_data_quality.py
+│   └── test_output_contract.py
 │
 ├── artifacts/
 │   ├── champion_model.joblib
-│   └── challenger_model.joblib
+│   ├── challenger_full_model.joblib
+│   └── city_lookup.json
 │
 ├── reports/
+│   ├── data_audit.json
+│   ├── temporal_benchmark.csv
+│   ├── model_ablation_benchmark.csv
+│   ├── cold_start_benchmark.json
+│   ├── fallback_benchmark.json
+│   ├── drift_report.csv
+│   ├── error_slices.csv
+│   ├── feature_importance.csv
+│   ├── uncertainty_calibration.json
+│   └── model_metadata.json
 │
 ├── outputs/
+│   ├── validation_predictions.csv
+│   ├── validation_diagnostics.csv
+│   ├── december_chart_inputs.csv
+│   ├── december_diagnostics.csv
+│   └── scorer_results/
+│       └── candidate_december.png
 │
 ├── docs/
+│   └── ENGINEERING_STRATEGY.md
+│
+├── static/
+│   └── index.html
+│
+├── deploy/
+│   └── cloud-run.md
+│
+├── .github/
+│   └── workflows/
+│       └── ci.yml
 │
 ├── Dockerfile
 ├── Makefile
 ├── requirements.txt
+├── score.py
 └── README.md
 
 # 16. Running Locally
