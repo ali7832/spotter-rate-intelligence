@@ -14,8 +14,6 @@ RUN pip install --no-cache-dir --upgrade pip && pip install --no-cache-dir -r re
 COPY src ./src
 COPY static ./static
 COPY artifacts ./artifacts
-COPY reports/model_metadata.json ./reports/model_metadata.json
-
 USER app
 EXPOSE 8080
 CMD ["sh", "-c", "uvicorn spotter_rate_intelligence.api:app --host 0.0.0.0 --port ${PORT} --workers 1"]
