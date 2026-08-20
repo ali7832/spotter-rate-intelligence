@@ -445,14 +445,14 @@ POST /v1/predict/csv
 
 spotter-rate-intelligence/
 
-├── src/
-│   └── spotter_rate_intelligence/
-│       ├── api.py
-│       ├── features.py
-│       ├── inference.py
-│       ├── training.py
-│       ├── model.py
-│       └── data_quality.py
+├── src/<n>
+│   └── spotter_rate_intelligence/<n>
+│       ├── api.py<n>
+│       ├── features.py<n>
+│       ├── inference.py<n>
+│       ├── training.py<n>
+│       ├── model.py<n>
+│       └── data_quality.py<n>
 │
 ├── scripts/
 │   ├── train_models.py
