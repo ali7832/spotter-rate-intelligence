@@ -512,6 +512,7 @@ spotter-rate-intelligence/
 ├── requirements.txt
 ├── score.py
 └── README.md
+```
 
 # 16. Running Locally
 Create Environment
